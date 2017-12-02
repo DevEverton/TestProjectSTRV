@@ -16,6 +16,15 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
+    @IBOutlet weak var icon: UIImageView!
+    @IBOutlet weak var cityCountry: UILabel!
+    @IBOutlet weak var temperatureCondition: UILabel!
+    @IBOutlet weak var clouds: UILabel!
+    @IBOutlet weak var rain: UILabel!
+    @IBOutlet weak var pressure: UILabel!
+    @IBOutlet weak var windSpeed: UILabel!
+    @IBOutlet weak var windDirection: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +32,40 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    typealias kelvin = Double
+    
+    func updateUI() {
+        
+        let forecast = Weather.forecast[0]
+        icon.image = forecast.icon
+        cityCountry.text = forecast.cityName + ", " + forecast.country
+        temperatureCondition.text = String(Int(forecast.temperature.kelvinToCelsius)) + "ºC || " + forecast.mainCondition
+        clouds.text = String(Int(forecast.clouds)) + "%"
+        rain.text = String(forecast.rain) + " mm"
+        pressure.text = String(Int(forecast.pressure)) + " hPa"
+        windSpeed.text = String(Int(forecast.windSpeed.msToKmh)) + "Km/h"
+        windDirection.text = String(getDirection(degree: forecast.windDirection))
+        
+        
+    }
+    
+    func getDirection(degree: Double) -> String {
+        
+        switch degree {
+        case 0.0: return "N"
+        case 1.0...89.9: return "NE"
+        case 90.0: return "E"
+        case 91.0...179.9: return "SE"
+        case 180.0: return "S"
+        case 181.0...269.9: return "SO"
+        case 270.0: return "O"
+        case 271.0...359.9: return "NO"
+        case 360.0: return "N"
+        default: break
+        }
+        return "Error"
+    }
+
     func getWeatherData(url: String, parameters: [String:Any]) {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in
@@ -38,23 +81,28 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
     }
     
     func updateWeatherData(json: JSON) {
-        
-        let iconID = json["list"][0]["weather"][0]["icon"].string
-        let icon = Weather.icons[iconID!]
-        let cityName = json["city"]["name"].string
-        let temperature = json["list"][0]["temp"]["max"].double
-        let mainCondition = json["list"][0]["weather"][0]["main"].string
-        let description = json["list"][0]["weather"][0]["description"].string
-        let clouds = json["list"][0]["clouds"].double
-        let rain = json["list"][0]["rain"].double ?? 0
-        let pressure = json["list"][0]["pressure"].double
-        let windSpeed = json["list"][0]["speed"].double
-        let windDirection = json["list"][0]["deg"].double
-        
-        
-        let todayWeather = Weather(icon: icon!, cityName: cityName!, temperature: temperature!, mainCondition: mainCondition!, description: description!, clouds: clouds!, rain: rain, pressure: pressure!, windSpeed: windSpeed!, windDirection: windDirection!)
 
-        print(todayWeather)
+        //Generating an array of the 7 days forecast
+        for i in 0...6 {
+            
+            let iconID = json["list"][i]["weather"][0]["icon"].string
+            let icon = Weather.icons[iconID!]
+            let cityName = json["city"]["name"].string
+            let country = json["city"]["country"].string
+            let temperature = json["list"][i]["temp"]["max"].double
+            let mainCondition = json["list"][i]["weather"][0]["main"].string
+            let description = json["list"][i]["weather"][0]["description"].string
+            let clouds = json["list"][i]["clouds"].double
+            let rain = json["list"][i]["rain"].double ?? 0
+            let pressure = json["list"][i]["pressure"].double
+            let windSpeed = json["list"][i]["speed"].double
+            let windDirection = json["list"][i]["deg"].double
+            
+            Weather.forecast.append(Weather(icon: icon!, cityName: cityName!, country: country!, temperature: temperature!, mainCondition: mainCondition!, description: description!, clouds: clouds!, rain: rain, pressure: pressure!, windSpeed: windSpeed!, windDirection: windDirection!))
+            
+           updateUI()
+            
+        }
 
     }
     

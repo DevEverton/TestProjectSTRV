@@ -35,12 +35,21 @@
 		501AADFB1FCF1A37005C7743 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFA1FCF1A37005C7743 /* TodayVC.swift */; };
 		501AADFC1FCF1A37005C7743 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFA1FCF1A37005C7743 /* TodayVC.swift */; };
 		501AADFD1FCF1A37005C7743 /* TodayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFA1FCF1A37005C7743 /* TodayVC.swift */; };
-		501AADFF1FCF35CA005C7743 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFE1FCF35CA005C7743 /* Constants.swift */; };
-		501AAE001FCF35CA005C7743 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFE1FCF35CA005C7743 /* Constants.swift */; };
-		501AAE011FCF35CA005C7743 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AADFE1FCF35CA005C7743 /* Constants.swift */; };
 		501AAE031FCF4341005C7743 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE021FCF4341005C7743 /* ForecastCell.swift */; };
 		501AAE041FCF4341005C7743 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE021FCF4341005C7743 /* ForecastCell.swift */; };
 		501AAE051FCF4341005C7743 /* ForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE021FCF4341005C7743 /* ForecastCell.swift */; };
+		501AAE0F1FD09709005C7743 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE0E1FD09709005C7743 /* ErrorHandler.swift */; };
+		501AAE101FD09709005C7743 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE0E1FD09709005C7743 /* ErrorHandler.swift */; };
+		501AAE111FD09709005C7743 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE0E1FD09709005C7743 /* ErrorHandler.swift */; };
+		501AAE171FD0A453005C7743 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE161FD0A453005C7743 /* Location.swift */; };
+		501AAE181FD0A453005C7743 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE161FD0A453005C7743 /* Location.swift */; };
+		501AAE191FD0A453005C7743 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE161FD0A453005C7743 /* Location.swift */; };
+		501AAE1B1FD0A846005C7743 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE1A1FD0A846005C7743 /* Network.swift */; };
+		501AAE1C1FD0A846005C7743 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE1A1FD0A846005C7743 /* Network.swift */; };
+		501AAE1D1FD0A846005C7743 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE1A1FD0A846005C7743 /* Network.swift */; };
+		501AAE231FD0F2B3005C7743 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE221FD0F2B3005C7743 /* Weather.swift */; };
+		501AAE241FD0F2B3005C7743 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE221FD0F2B3005C7743 /* Weather.swift */; };
+		501AAE251FD0F2B3005C7743 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501AAE221FD0F2B3005C7743 /* Weather.swift */; };
 		CF08FBF647F2AF1CD31DF891 /* Pods_TestProjectSTRVTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55F8F6D623F0503ACE40CD71 /* Pods_TestProjectSTRVTests.framework */; };
 		D6E316953F34D87EE241E2EA /* Pods_TestProjectSTRVUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9794E3F4A4DE99B2177583B9 /* Pods_TestProjectSTRVUITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,8 +94,11 @@
 		501AADF21FCF182B005C7743 /* ForecastTBC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTBC.swift; sourceTree = "<group>"; };
 		501AADF61FCF1A1F005C7743 /* ForecastVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastVC.swift; sourceTree = "<group>"; };
 		501AADFA1FCF1A37005C7743 /* TodayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayVC.swift; sourceTree = "<group>"; };
-		501AADFE1FCF35CA005C7743 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		501AAE021FCF4341005C7743 /* ForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCell.swift; sourceTree = "<group>"; };
+		501AAE0E1FD09709005C7743 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		501AAE161FD0A453005C7743 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		501AAE1A1FD0A846005C7743 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		501AAE221FD0F2B3005C7743 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		55F8F6D623F0503ACE40CD71 /* Pods_TestProjectSTRVTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectSTRVTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EF9E4A114E2B975A2FE4CF /* Pods_TestProjectSTRV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestProjectSTRV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F183F1A885771E2200FF03F /* Pods-TestProjectSTRVUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestProjectSTRVUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestProjectSTRVUITests/Pods-TestProjectSTRVUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -211,7 +223,10 @@
 		501AADE11FCEE9D4005C7743 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				501AADFE1FCF35CA005C7743 /* Constants.swift */,
+				501AAE0E1FD09709005C7743 /* ErrorHandler.swift */,
+				501AAE161FD0A453005C7743 /* Location.swift */,
+				501AAE1A1FD0A846005C7743 /* Network.swift */,
+				501AAE221FD0F2B3005C7743 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,9 +547,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501AADFF1FCF35CA005C7743 /* Constants.swift in Sources */,
+				501AAE0F1FD09709005C7743 /* ErrorHandler.swift in Sources */,
+				501AAE171FD0A453005C7743 /* Location.swift in Sources */,
 				501AADF71FCF1A1F005C7743 /* ForecastVC.swift in Sources */,
 				501AADF31FCF182B005C7743 /* ForecastTBC.swift in Sources */,
+				501AAE231FD0F2B3005C7743 /* Weather.swift in Sources */,
+				501AAE1B1FD0A846005C7743 /* Network.swift in Sources */,
 				501AADFB1FCF1A37005C7743 /* TodayVC.swift in Sources */,
 				501AAE031FCF4341005C7743 /* ForecastCell.swift in Sources */,
 				501AADB11FCEE995005C7743 /* AppDelegate.swift in Sources */,
@@ -545,9 +563,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501AAE001FCF35CA005C7743 /* Constants.swift in Sources */,
+				501AAE101FD09709005C7743 /* ErrorHandler.swift in Sources */,
+				501AAE181FD0A453005C7743 /* Location.swift in Sources */,
 				501AADF81FCF1A1F005C7743 /* ForecastVC.swift in Sources */,
 				501AADF41FCF182B005C7743 /* ForecastTBC.swift in Sources */,
+				501AAE241FD0F2B3005C7743 /* Weather.swift in Sources */,
+				501AAE1C1FD0A846005C7743 /* Network.swift in Sources */,
 				501AADFC1FCF1A37005C7743 /* TodayVC.swift in Sources */,
 				501AAE041FCF4341005C7743 /* ForecastCell.swift in Sources */,
 				501AADC61FCEE995005C7743 /* TestProjectSTRVTests.swift in Sources */,
@@ -558,9 +579,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501AAE011FCF35CA005C7743 /* Constants.swift in Sources */,
+				501AAE111FD09709005C7743 /* ErrorHandler.swift in Sources */,
+				501AAE191FD0A453005C7743 /* Location.swift in Sources */,
 				501AADF91FCF1A1F005C7743 /* ForecastVC.swift in Sources */,
 				501AADF51FCF182B005C7743 /* ForecastTBC.swift in Sources */,
+				501AAE251FD0F2B3005C7743 /* Weather.swift in Sources */,
+				501AAE1D1FD0A846005C7743 /* Network.swift in Sources */,
 				501AADFD1FCF1A37005C7743 /* TodayVC.swift in Sources */,
 				501AAE051FCF4341005C7743 /* ForecastCell.swift in Sources */,
 				501AADD11FCEE995005C7743 /* TestProjectSTRVUITests.swift in Sources */,

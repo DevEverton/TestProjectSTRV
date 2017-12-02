@@ -14,14 +14,14 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
     
     @IBOutlet weak var topBarTitle: UILabel!
     
-    let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
 
     }
+    
+
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

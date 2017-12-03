@@ -24,7 +24,7 @@ struct Weather {
     let windSpeed: Double
     let windDirection: Double
     
-    static let icons = ["01d":#imageLiteral(resourceName: "Sun_Big"), "02d": #imageLiteral(resourceName: "Cloudy_Big"), "03d": #imageLiteral(resourceName: "Cloudy_Big"), "04d": #imageLiteral(resourceName: "Cloudy_Big"), "09d": #imageLiteral(resourceName: "Forecast"), "10d": #imageLiteral(resourceName: "Forecast"), "11d": #imageLiteral(resourceName: "CL"), "13d": #imageLiteral(resourceName: "CL")]
+    static let icons = ["01d":#imageLiteral(resourceName: "Sun_Big"), "02d": #imageLiteral(resourceName: "Cloudy_Big"), "03d": #imageLiteral(resourceName: "Cloudy_Big"), "04d": #imageLiteral(resourceName: "Cloudy_Big"), "09d": #imageLiteral(resourceName: "rainy"), "10d": #imageLiteral(resourceName: "rainy"), "11d": #imageLiteral(resourceName: "CL"), "13d": #imageLiteral(resourceName: "CL")]
     
     static var forecast = [Weather]()
     

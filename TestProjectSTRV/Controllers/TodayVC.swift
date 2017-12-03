@@ -39,7 +39,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         let forecast = Weather.forecast[0]
         icon.image = forecast.icon
         cityCountry.text = forecast.cityName + ", " + forecast.country
-        temperatureCondition.text = String(Int(forecast.temperature.kelvinToCelsius)) + "ºC || " + forecast.mainCondition
+        temperatureCondition.text = String(Int(forecast.temperature.kelvinToCelsius)) + "ºC | " + forecast.mainCondition
         clouds.text = String(Int(forecast.clouds)) + "%"
         rain.text = String(forecast.rain) + " mm"
         pressure.text = String(Int(forecast.pressure)) + " hPa"

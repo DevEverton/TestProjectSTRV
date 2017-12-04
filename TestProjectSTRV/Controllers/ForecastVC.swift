@@ -17,10 +17,8 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
     }
-    
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -36,9 +34,10 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
         let weather = Weather.forecast[indexPath.row]
         let weekDays = getDaysOfWeek()[indexPath.row]
         
+        topBarTitle.text = weather.cityName
         weatherCell.weatherImage.image = weather.icon
         weatherCell.day.text = weekDays
-        weatherCell.condition.text = weather.description
+        weatherCell.condition.text = weather.mainCondition
         weatherCell.temperature.text = String(Int(weather.temperature.kelvinToCelsius)) + "º"
         
         return weatherCell
@@ -52,10 +51,6 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-    
-    
-
 
 
 }

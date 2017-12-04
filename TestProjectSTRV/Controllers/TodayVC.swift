@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import SVProgressHUD
 
 
 class TodayVC: UIViewController, CLLocationManagerDelegate {
@@ -31,9 +32,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         setUpLocationManager()
         
     }
-    
-    typealias kelvin = Double
-    
+        
     func updateUI() {
         
         let forecast = Weather.forecast[0]
@@ -66,10 +65,12 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         return "Error"
     }
 
-    func getWeatherData(url: String, parameters: [String:Any]) {
-        Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
+    func getWeatherData(url: String) {
+        SVProgressHUD.show(withStatus: "Loading...")
+        Alamofire.request(url, method: .get).responseJSON {
             response in
             if response.result.isSuccess {
+                SVProgressHUD.dismiss()
                 let weatherJSON: JSON = JSON(response.result.value!)
                 self.updateWeatherData(json: weatherJSON)
                 
@@ -100,7 +101,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
             
             Weather.forecast.append(Weather(icon: icon!, cityName: cityName!, country: country!, temperature: temperature!, mainCondition: mainCondition!, description: description!, clouds: clouds!, rain: rain, pressure: pressure!, windSpeed: windSpeed!, windDirection: windDirection!))
             
-           updateUI()
+            updateUI()
             
         }
 
@@ -116,9 +117,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
             Location.latitude = location.coordinate.latitude
             Location.longitude = location.coordinate.longitude
             
-            print("Latitude: \(Location.latitude), Longtude: \(Location.longitude)")
-            
-            getWeatherData(url: Network.url, parameters: Location.parameters)
+            getWeatherData(url: Network.url)
             
         }
         
@@ -144,6 +143,14 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func shareButton(_ sender: Any) {
+        
+        let forecast = Weather.forecast[0]
+        let activity = UIActivityViewController(activityItems: [forecast.icon, "Condition: \(forecast.mainCondition)", "Temperature: \(forecast.temperature)"], applicationActivities: nil)
+        self.present(activity, animated: true, completion: nil)
+    }
+    
 
     
 

@@ -86,20 +86,24 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         //Generating an array of the 7 days forecast
         for i in 0...6 {
             
-            let iconID = json["list"][i]["weather"][0]["icon"].string
-            let icon = Weather.icons[iconID!]
-            let cityName = json["city"]["name"].string
-            let country = json["city"]["country"].string
-            let temperature = json["list"][i]["temp"]["max"].double
-            let mainCondition = json["list"][i]["weather"][0]["main"].string
-            let description = json["list"][i]["weather"][0]["description"].string
-            let clouds = json["list"][i]["clouds"].double
-            let rain = json["list"][i]["rain"].double ?? 0
-            let pressure = json["list"][i]["pressure"].double
-            let windSpeed = json["list"][i]["speed"].double
-            let windDirection = json["list"][i]["deg"].double
+            guard let iconID = json["list"][i]["weather"][0]["icon"].string,
+            let icon = Weather.icons[iconID],
+            let cityName = json["city"]["name"].string,
+            let country = json["city"]["country"].string,
+            let temperature = json["list"][i]["temp"]["max"].double,
+            let mainCondition = json["list"][i]["weather"][0]["main"].string,
+            let description = json["list"][i]["weather"][0]["description"].string,
+            let clouds = json["list"][i]["clouds"].double,
+            let pressure = json["list"][i]["pressure"].double,
+            let windSpeed = json["list"][i]["speed"].double,
+            let windDirection = json["list"][i]["deg"].double else {
+                return createAlert(withTitle: "Server Error", message: "Weather forecast unavailable", actionTitle: "Ok")
+                
+            }
             
-            Weather.forecast.append(Weather(icon: icon!, cityName: cityName!, country: country!, temperature: temperature!, mainCondition: mainCondition!, description: description!, clouds: clouds!, rain: rain, pressure: pressure!, windSpeed: windSpeed!, windDirection: windDirection!))
+            let rain = json["list"][i]["rain"].double ?? 0
+            
+            Weather.forecast.append(Weather(icon: icon, cityName: cityName, country: country, temperature: temperature, mainCondition: mainCondition, description: description, clouds: clouds, rain: rain, pressure: pressure, windSpeed: windSpeed, windDirection: windDirection))
             
             updateUI()
             
@@ -116,7 +120,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
             locationManager.delegate = nil
             Location.latitude = location.coordinate.latitude
             Location.longitude = location.coordinate.longitude
-            
+                        
             getWeatherData(url: Network.url)
             
         }

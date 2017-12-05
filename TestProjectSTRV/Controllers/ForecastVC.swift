@@ -32,7 +32,7 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
         guard let weatherCell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? ForecastCell else { fatalError() }
         
         let weather = Weather.forecast[indexPath.row]
-        let weekDays = getDaysOfWeek()[indexPath.row]
+        let weekDays = getDaysofWeek()[indexPath.row]
         
         topBarTitle.text = weather.cityName
         weatherCell.weatherImage.image = weather.icon
@@ -43,9 +43,23 @@ class ForecastVC: UIViewController, CLLocationManagerDelegate, UITableViewDataSo
         return weatherCell
     }
     
-    func getDaysOfWeek() -> [String] {
-        let date = Calendar.current.weekdaySymbols
-        return date
+    func getDaysofWeek() -> [String] {
+        let date = Date()
+        let identifier = Calendar.Identifier.gregorian
+        let calendar = Calendar(identifier: identifier )
+        let component = calendar.component(.weekday, from: date)
+        
+        switch component {
+        case 1: return ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        case 2: return ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+        case 3: return ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday"]
+        case 4: return ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday"]
+        case 5: return ["Thursday", "Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday"]
+        case 6: return ["Friday", "Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"]
+        case 7: return ["Saturday", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        default: break
+        }
+        return []
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -745,7 +745,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F08E523DD836CF8127C66DB0 /* Pods-TestProjectSTRV.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK5Y26D53T;
 				INFOPLIST_FILE = TestProjectSTRV/Info.plist;
@@ -761,7 +761,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4A515BD70C4FCBB08E575CCD /* Pods-TestProjectSTRV.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TK5Y26D53T;
 				INFOPLIST_FILE = TestProjectSTRV/Info.plist;

@@ -32,7 +32,7 @@ class TodayVC: UIViewController, CLLocationManagerDelegate {
         setUpLocationManager()
         
     }
-        
+
     func updateUI() {
         
         let forecast = Weather.forecast[0]
